@@ -13,5 +13,9 @@
     {{/each}}
   </ul>
 
-  <button>See More</button>
+  {{# if hasNext }}
+    <button class="next">See More</button>
+  {{ else }}
+    <button class="reset">Reset</button>
+  {{/if}}
 </template>

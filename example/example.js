@@ -11,19 +11,26 @@ if (Meteor.isClient) {
   Template.posts.helpers({
     posts() {
       return Posts.find();
+    },
+
+    hasNext() {
+      return Posts.paginated.hasNext();
     }
   });
 
   // EVENTS
   Template.posts.events({
-    'click button': function() {
+    'click .next': function() {
       Posts.paginated.next();
+    },
+
+    'click .reset': function() {
+      Posts.paginated.reset();
     }
   });
 }
 
 if (Meteor.isServer) {
-
   Meteor.publish('posts', (limit) => {
     return Posts.find({}, { limit: limit });
   });

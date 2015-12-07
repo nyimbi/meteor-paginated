@@ -33,6 +33,10 @@ class Paginated {
     this._limitListeners.changed();
   }
 
+  hasNext(filter = {}) {
+    return _.isEqual(Posts.find(filter).count(), this.limit());
+  }
+
   done() {
     this._loaded = this._limit;
     this._loadedListeners.changed();
