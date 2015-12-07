@@ -26,6 +26,17 @@ Meteor.publish('posts', function(limit) {
 });
 ```
 
+
+###### Use Iron Router
+```js
+Router.route('/posts', {
+  name: 'Posts',
+  waitOn() {
+    return Posts.paginated.subscribe();
+  }
+});
+```
+
 ##### Following API
 
  - `paginated.subscribe()` - It makes subscribers.
