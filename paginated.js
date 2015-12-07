@@ -34,7 +34,7 @@ class Paginated {
   }
 
   hasNext(filter = {}) {
-    return _.isEqual(Posts.find(filter).count(), this.limit());
+    return _.isEqual(this._collection.find(filter).count(), this.limit());
   }
 
   done() {
@@ -48,7 +48,7 @@ class Paginated {
   }
 
   subscribe(filter = {}) {
-    
+
     // subscribe autorun then
     Meteor.autorun(() => {
       const handle = Meteor.subscribe(this._collection.name, this.limit(), filter);
