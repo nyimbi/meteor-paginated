@@ -1,8 +1,8 @@
 Package.describe({
   name: 'yasaricli:paginated',
   version: '0.0.1',
-  summary: '',
-  git: '',
+  summary: 'Meteor Paginated Subscription',
+  git: 'https://github.com/yasaricli/meteor-paginated.git',
   documentation: 'README.md'
 });
 
