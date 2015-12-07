@@ -3,12 +3,15 @@
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
-
-  {{> hello}}
+  {{> posts }}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="posts">
+  <ul>
+    {{# each posts }}
+      <li>Post - {{ rank }}</li>
+    {{/each}}
+  </ul>
+
+  <button>See More</button>
 </template>

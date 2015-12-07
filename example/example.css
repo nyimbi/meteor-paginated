@@ -1,1 +1,9 @@
 /* CSS declarations go here */
+
+body { padding: 0px; margin: 0px; }
+ul, li { list-style: none; padding:0px; margin:0px; }
+
+ul { width: 500px; margin:auto; }
+li { padding:25px; text-align:center; font-size:30px; font-weight:bold; color:#333; }
+
+button { margin:auto; display:block; font-size:20px; border:0px; background-color: #6064ad; color: #ffffff; border-radius: 3px; position: relative; text-align: center; text-decoration: none !important; vertical-align: middle; white-space: nowrap; }
