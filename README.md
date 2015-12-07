@@ -25,3 +25,8 @@ Meteor.publish('posts', function(limit) {
   return Posts.find({}, { limit: limit });
 });
 ```
+
+##### Following API
+
+ - `handle.subscribe()` - It makes subscribers.
+ - `handle.next()` - fetch the next page of results
