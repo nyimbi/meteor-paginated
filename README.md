@@ -28,5 +28,5 @@ Meteor.publish('posts', function(limit) {
 
 ##### Following API
 
- - `Posts.paginated.subscribe()` - It makes subscribers.
- - `Posts.paginated.next()` - fetch the next page of results
+ - `paginated.subscribe()` - It makes subscribers.
+ - `paginated.next()` - fetch the next page of results
