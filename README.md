@@ -21,11 +21,10 @@ Posts.attachPaginated(5);
 ##### Subscription
 
 ```js
-Meteor.publish('posts', function(limit) {
-  return Posts.find({}, { limit: limit });
+Meteor.publish('posts', function(limit, filter) {
+  return Posts.find(filter, { limit: limit });
 });
 ```
-
 
 ###### Use Iron Router
 ```js
@@ -39,5 +38,6 @@ Router.route('/posts', {
 
 ##### Following API
 
- - `paginated.subscribe()` - It makes subscribers.
+ - `paginated.subscribe()` - it makes subscribers.
  - `paginated.next()` - fetch the next page of results
+ - `paginated.hasNext()` - limit fetched collection.
