@@ -1,4 +1,6 @@
-## Meteor Paginated Subscription
+## Paginated
+
+Meteor Paginated Subscription
 
 
 ## Installation
