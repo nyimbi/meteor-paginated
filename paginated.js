@@ -53,12 +53,9 @@ class Paginated {
     Meteor.autorun(() => {
       const handle = Meteor.subscribe(this._collection.name, this.limit(), filter);
 
-      // if we are re-subscribing to an already ready subscription.
-      Meteor.autorun(() => {
-        if (handle.ready()) {
-          this.done();
-        }
-      });
+      if (handle.ready()) {
+        this.done();
+      }
     });
   }
 }
