@@ -43,5 +43,6 @@ Router.route('/posts', {
  - `paginated.subscribe()` - it makes subscribers.
  - `paginated.next()` - fetch the next page of results
  - `paginated.hasNext()` - limit fetched collection. `{{# if hasNext }}`
- - 
- [1]:http://paginated.meteor.com/
+ 
+
+[1]:http://paginated.meteor.com/
