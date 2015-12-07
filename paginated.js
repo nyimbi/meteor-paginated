@@ -47,11 +47,11 @@ class Paginated {
     this._limitListeners.changed();
   }
 
-  subscribe() {
-
+  subscribe(filter = {}) {
+    
     // subscribe autorun then
     Meteor.autorun(() => {
-      const handle = Meteor.subscribe(this._collection.name, this.limit());
+      const handle = Meteor.subscribe(this._collection.name, this.limit(), filter);
 
       // if we are re-subscribing to an already ready subscription.
       Meteor.autorun(() => {

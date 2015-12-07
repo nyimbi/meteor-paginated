@@ -4,8 +4,17 @@ Posts.attachPaginated(5);
 
 if (Meteor.isClient) {
 
-  // subscribe
-  Posts.paginated.subscribe();
+  Router.configure({
+    layoutTemplate: 'layout',
+    loadingTemplate: 'loading'
+  });
+
+  Router.route('/', {
+    name: 'Posts',
+    waitOn() {
+      return  Posts.paginated.subscribe();
+    }
+  });
 
   // HELPERS
   Template.posts.helpers({
@@ -31,8 +40,8 @@ if (Meteor.isClient) {
 }
 
 if (Meteor.isServer) {
-  Meteor.publish('posts', (limit) => {
-    return Posts.find({}, { limit: limit });
+  Meteor.publish('posts', (limit, filter) => {
+    return Posts.find(filter, { limit: limit });
   });
 
   Migrations.add('posts', () => {

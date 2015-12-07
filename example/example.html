@@ -2,9 +2,9 @@
   <title>example</title>
 </head>
 
-<body>
-  {{> posts }}
-</body>
+<template name="layout">
+  {{ > yield }}
+</template>
 
 <template name="posts">
   <ul>
@@ -18,4 +18,8 @@
   {{ else }}
     <button class="reset">Reset</button>
   {{/if}}
+</template>
+
+<template name="loading">
+  loading..
 </template>
