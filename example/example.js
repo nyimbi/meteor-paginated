@@ -24,6 +24,10 @@ if (Meteor.isClient) {
 
     hasNext() {
       return Posts.paginated.hasNext();
+    },
+
+    ready() {
+      return Posts.paginated.ready();
     }
   });
 

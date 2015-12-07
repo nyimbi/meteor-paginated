@@ -13,10 +13,14 @@
     {{/each}}
   </ul>
 
-  {{# if hasNext }}
-    <button class="next">See More</button>
+  {{# if ready }}
+    {{# if hasNext }}
+      <button class="next">See More</button>
+    {{ else }}
+      <button class="reset">Reset</button>
+    {{/if}}
   {{ else }}
-    <button class="reset">Reset</button>
+    loading...
   {{/if}}
 </template>
 
